@@ -1,0 +1,22 @@
+Django RSA Encryption Engine
+
+
+Overview =>
+This interactive Django web application demonstrates the mathematical fundamentals of RSA Asymmetric Encryption from the ground up. By building the algorithms entirely from scratch without relying on external cryptographic libraries, this project bridges the gap between theoretical computer science and practical backend systems engineering.
+
+
+Core Features (Main Points) =>
+Pure Algorithmic Implementation: Features custom Python logic for prime modulus generation, Euler's Totient calculation, and the Extended Euclidean Algorithm to solve for modular multiplicative inverses.
+End-to-End Encryption Pipeline: Provides a seamless, multi-step user interface to generate public and private key pairs, lock numerical payloads into ciphertext, and securely reverse the process.
+Database & State Management: Utilizes Django's ORM and an SQLite database to maintain a persistent ledger of all encryption and decryption events. This history is cleanly integrated into the automated Django Admin panel.
+Security Best Practices: Engineered with environment variable isolation using python-dotenv to ensure secret keys and configuration data are strictly protected from version control exposure.
+
+
+Tech Stack =>
+Language: Python 3
+Backend Framework: Django
+Database: SQLite3
+Security/Config: python-dotenv
+Frontend: HTML5, CSS3, Django HTML Templates
+
+
