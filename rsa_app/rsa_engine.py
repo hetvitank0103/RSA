@@ -54,7 +54,7 @@ def generate_rsa_keys(p, q):
     # Calculate the private decryption key
     d = get_modular_inverse(e, phi)
     
-    # Return everything neatly packaged for our Django views
+    # Return everything neatly packaged for the Django views
     return {
         'public_e': e,
         'public_n': n,
