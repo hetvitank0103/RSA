@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RSA Engine - Setup</title>
+    <link rel="stylesheet" href="{% static 'rsa_app/style.css' %}">
+</head>
+<body>
+    <div class="card">
+        <h2>1. Generate Keys & Encrypt</h2>
+        <p>Enter two prime numbers (p and q) and a secret number.</p>
+        
+        {% if error_msg %}
+            <div class="error"><strong>Error:</strong> {{ error_msg }}</div>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <label>Prime Number (p):</label>
+            <input type="number" name="p" required placeholder="e.g., 11">
+            
+            <label>Prime Number (q):</label>
+            <input type="number" name="q" required placeholder="e.g., 17">
+            
+            <label>Secret Number to Encrypt:</label>
+            <input type="number" name="number" required placeholder="e.g., 88">
+            
+            <button type="submit">Encrypt Number</button>
+        </form>
+    </div>
+</body>
+</html>

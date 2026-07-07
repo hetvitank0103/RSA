@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RSA Engine - Decrypted</title>
+    <link rel="stylesheet" href="{% static 'rsa_app/style.css' %}">
+</head>
+<body>
+    <div class="card">
+        <h2>3. Message Decrypted</h2>
+        <p>Engine used private key (<strong>d = {{ record.private_key_d }}</strong>) to reverse the algebra.</p>
+        
+        <p><strong>Encrypted Ciphertext:</strong> {{ record.encrypted_number }}</p>
+        
+        <p><strong>Restored Number:</strong></p>
+        <div class="data-box reveal">
+            {{ decrypted_num }}
+        </div>
+
+        {% if decrypted_num == record.original_number %}
+            <div class="success">
+                ✓ Success! The decrypted number matches the original input.
+            </div>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">Start Over</button>
+        </form>
+    </div>
+</body>
+</html>

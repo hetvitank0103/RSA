@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RSA Engine - Encrypted</title>
+    <link rel="stylesheet" href="{% static 'rsa_app/style.css' %}">
+</head>
+<body>
+    <div class="card">
+        <h2>2. Message Encrypted!</h2>
+        
+        <ul>
+            <li><strong>Public n (Playing Field):</strong> {{ record.public_key_n }}</li>
+            <li><strong>Public e (Padlock):</strong> {{ record.public_key_e }}</li>
+        </ul>
+
+        <p><strong>Original Number:</strong> {{ record.original_number }}</p>
+        
+        <p><strong>Secure Ciphertext:</strong></p>
+        <div class="data-box">
+            {{ record.encrypted_number }}
+        </div>
+
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">Proceed to Decryption</button>
+        </form>
+    </div>
+</body>
+</html>
